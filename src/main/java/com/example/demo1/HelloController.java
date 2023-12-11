@@ -57,9 +57,15 @@ public class HelloController {
     }
     @FXML
     protected  void completeItem(){
+
         listViewCompleted.getItems().add(listViewJawn.getSelectionModel().getSelectedItem());
         listViewJawn.getItems().remove(listViewJawn.getSelectionModel().getSelectedIndex());
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Completed Todos");
+        alert.setHeaderText("Congradulations on your todos");
+        alert.initStyle(StageStyle.UTILITY);
 
+        alert.show();
     }
     @FXML
     protected  void completeALL(){

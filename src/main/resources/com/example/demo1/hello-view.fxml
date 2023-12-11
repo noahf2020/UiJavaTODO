@@ -53,7 +53,7 @@
 
 
     <children>
-        <MenuBar VBox.vgrow="NEVER">
+        <MenuBar id="linear-grad-to-top-right" style="-fx-background-color: linear-gradient(from 30% 30% to 23% 30%, repeat,  #e9967a 62%, #ff8c00 88%);};" stylesheets="@style.css" VBox.vgrow="NEVER">
             <menus>
                 <Menu mnemonicParsing="false" text="File">
                     <items>
@@ -92,7 +92,7 @@
                 </Menu>
             </menus>
         </MenuBar>
-        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="267.0" prefWidth="640.0" style="-fx-background-color: white;" VBox.vgrow="ALWAYS">
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="267.0" prefWidth="640.0" style="-fx-background-color: linear-gradient(to top right, #ff7f50, #6a5acd);;" stylesheets="@style.css" VBox.vgrow="ALWAYS">
             <children>
                 <Label alignment="CENTER" layoutX="155.0" layoutY="177.0" style="&#10;" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
                     <font>
@@ -101,13 +101,13 @@
                 </Label>
                 <HBox layoutX="10.0" layoutY="73.0" prefHeight="208.0" prefWidth="616.0">
                     <children>
-                        <ListView fx:id="listViewJawn" prefHeight="165.0" prefWidth="251.0" />
+                        <ListView fx:id="listViewJawn" prefHeight="165.0" prefWidth="251.0" style="-fx-background-color: linear-gradient(to top left, #ff7f50, #6a5acd); -fx-border-color: black;" />
                         <VBox prefHeight="208.0" prefWidth="103.0">
                             <children>
-                                <TextField fx:id="inputValue" prefHeight="61.0" prefWidth="35.0" promptText="Enter a Todo" style="-fx-background-color: white; -fx-border-radius: 8; -fx-border-color: grey; -fx-padding: 10, 10, 10, 10;" />
-                                <Button fx:id="saveTodo" mnemonicParsing="false" onAction="#logInput" prefHeight="50.0" prefWidth="103.0" style="-fx-border-radius: 6;" text="Save Todo" />
-                        <Button fx:id="deleteTodo" mnemonicParsing="false" onAction="#deleteItem" prefHeight="51.0" prefWidth="103.0" text="Delete Todo" />
-                        <Button fx:id="completeTodo" mnemonicParsing="false" onAction="#completeItem" prefHeight="49.0" prefWidth="103.0" text="Complete" />
+                                <TextField fx:id="inputValue" prefHeight="61.0" prefWidth="35.0" promptText="Enter a Todo" style="-fx-background-color: linear-gradient(to top, #ff7f50, #6a5acd); -fx-border-radius: 8; -fx-border-color: black; -fx-padding: 10, 10, 10, 10;" />
+                                <Button fx:id="saveTodo" mnemonicParsing="false" onAction="#logInput" prefHeight="50.0" prefWidth="103.0" style="-fx-background-color: linear-gradient(to top, #ff7f50, #6a5acd); -fx-border-color: black; -fx-text-fill: white; -fx-font-weight: 700;" text="Save Todo" />
+                        <Button fx:id="deleteTodo" mnemonicParsing="false" onAction="#deleteItem" prefHeight="51.0" prefWidth="103.0" style="-fx-background-color: linear-gradient(to top, #ff7f50, #6a5acd); -fx-border-color: black; -fx-text-fill: white; -fx-font-weight: 700;" text="Delete Todo" />
+                        <Button fx:id="completeTodo" mnemonicParsing="false" onAction="#completeItem" prefHeight="49.0" prefWidth="103.0" style="-fx-background-color: linear-gradient(to top, #ff7f50, #6a5acd); -fx-border-color: black; -fx-text-fill: white; -fx-font-weight: 700;" text="Complete" />
                             </children>
                         </VBox>
                   <TabPane prefHeight="208.0" prefWidth="0.0" tabClosingPolicy="UNAVAILABLE" />
@@ -117,13 +117,13 @@
                           <tabs>
                             <Tab text="Manage todos">
                               <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="192.0" prefWidth="259.0" style="-fx-background-radius: 6;">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="192.0" prefWidth="259.0" style="-fx-background-color: linear-gradient(to top, #ff7f50, #6a5acd) 6;">
                                        <children>
-                                          <VBox layoutX="1.0" layoutY="3.0" prefHeight="152.0" prefWidth="259.0" style="-fx-background-color: grey; -fx-border-radius: 6;">
+                                          <VBox layoutX="1.0" layoutY="3.0" prefHeight="152.0" prefWidth="259.0" style="-fx-background-color: linear-gradient(to top, #ff7f50, #6a5acd); -fx-border-radius: 6;">
                                              <children>
-                                                <Button fx:id="deleteAll" mnemonicParsing="false" onAction="#deleteAll" prefHeight="42.0" prefWidth="255.0" text="Delete All" />
-                                                <Button fx:id="recoverAll" mnemonicParsing="false" onAction="#recoverAll" prefHeight="42.0" prefWidth="268.0" text="Recover All" />
-                                                <Button fx:id="completeAll" mnemonicParsing="false" onAction="#completeALL" prefHeight="42.0" prefWidth="265.0" text="Mark All As Complete" />
+                                                <Button fx:id="deleteAll" mnemonicParsing="false" onAction="#deleteAll" prefHeight="42.0" prefWidth="254.0" style="-fx-background-color: linear-gradient(to top left, #ff7f50, #6a5acd); -fx-border-color: black;" text="Delete All" />
+                                                <Button fx:id="recoverAll" mnemonicParsing="false" onAction="#recoverAll" prefHeight="42.0" prefWidth="254.0" style="-fx-background-color: linear-gradient(to top left, #ff7f50, #6a5acd); -fx-border-color: black;" text="Recover All" />
+                                                <Button fx:id="completeAll" mnemonicParsing="false" onAction="#completeALL" prefHeight="42.0" prefWidth="254.0" style="-fx-background-color: linear-gradient(to top left, #ff7f50, #6a5acd); -fx-border-color: black;" text="Mark All As Complete" />
                                              </children>
                                           </VBox>
                                        </children>
@@ -158,7 +158,7 @@
                   </Pane>
                     </children>
                 </HBox>
-                <HBox layoutX="11.0" prefHeight="53.0" prefWidth="616.0">
+                <HBox layoutX="11.0" prefHeight="53.0" prefWidth="616.0" style="-fx-background-color: -fx-background-color: linear-gradient(to top right, #ff7f50, #6a5acd);" stylesheets="@style.css">
                     <children>
                         <Label alignment="TOP_CENTER" prefHeight="27.0" prefWidth="616.0" text="NOAHS TODO LIST" textAlignment="CENTER">
                             <font>
