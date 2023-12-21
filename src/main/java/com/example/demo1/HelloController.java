@@ -1,9 +1,12 @@
 package com.example.demo1;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.StageStyle;
+
+import java.io.*;
 
 public class HelloController {
     @FXML
@@ -18,9 +21,14 @@ public class HelloController {
     public Button deleteAll;
     public Button recoverAll;
     public Button recoverSelected;
-    ObservableList testingList;
+
 
     public Button completeAll;
+
+//    public void initialize() throws Exception {
+//        this.RestoreData();
+//
+//    }
 
     @FXML
     protected void onHelloButtonClick() {
@@ -28,8 +36,11 @@ public class HelloController {
     }
 
     @FXML
-    protected void logInput(){
+    protected void logInput() throws Exception {
+
+        System.out.println("Log ");
         listViewJawn.getItems().add(inputValue.getText());
+
     }
 
     @FXML
@@ -78,6 +89,37 @@ public class HelloController {
         alert.initStyle(StageStyle.UTILITY);
 
         alert.show();
+    }
+
+
+    public void saveData() throws Exception {
+        File fileForData = new File("TaskData");
+        FileOutputStream outputStream = new FileOutputStream(fileForData);
+        ObjectOutputStream objOutputStream = new ObjectOutputStream(outputStream);
+        objOutputStream.writeObject(listViewJawn.getItems().size());
+        for (Object item : listViewJawn.getItems()) {
+            objOutputStream.writeObject(item);
+        }
+        objOutputStream.flush();
+        outputStream.flush();
+
+
+
+    }
+
+
+    public void RestoreData() throws Exception {
+        File fileForData = new File("TaskData");
+        FileInputStream inputStream = new FileInputStream(fileForData);
+        ObjectInputStream objInputStream = new ObjectInputStream(inputStream);
+        Integer numOfSavedObjects = (Integer)objInputStream.readObject();
+        for (int i = 0; i < numOfSavedObjects; i = i + 1) {
+            String listText = (String) objInputStream.readObject();
+            listViewJawn.getItems().add(listText);
+        }
+        inputStream.close();
+
+
     }
 
 }
